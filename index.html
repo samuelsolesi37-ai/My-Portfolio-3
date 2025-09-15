@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+     <div class="logo">My Portfolio</div>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text animate-slide-in">
+          <h1>👋 Hello, I’m <span class="accent">Solesi Samuel Oluwatomisin</span></h1>
+          <p class="tagline">Aspiring Web Developer • Lincoln University</p>
+          <p class="intro">
+            I love building clean and simple websites. I’m learning PHP (OOP), HTML, CSS, and JavaScript.
+          </p>
+          <div class="cta-group">
+            <a class="btn primary" href="projects.html">View My Projects</a>
+            <a class="btn ghost" href="about.html">About Me</a>
+            <a class="btn ghost" href="video.html">▶ Watch Intro Video</a>
+          </div>
+        </div>
+        <div class="hero-media animate-fade-in">
+          <img src="./images/Profile pic.jpg" alt="Profile photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+      <div class="container grid-3">
+        <article class="card animate-up">
+          <h3>Skills</h3>
+          <p>HTML, CSS, JavaScript, PHP (OOP).</p>
+        </article>
+        <article class="card animate-up">
+          <h3>Projects</h3>
+          <p>Calculator App, Voting System, To-Do List.</p>
+        </article>
+        <article class="card animate-up">
+          <h3>Goals</h3>
+          <p>To become a confident full-stack developer and build useful tools.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>Solesi Samuel Oluwatomisin</h3>
+        <p>Web Developer • Student at Lincoln University</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-socials">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://wa.me/1234567890" target="_blank">WhatsApp</a></li>
+          <li><a href="https://facebook.com/" target="_blank">Facebook</a></li>
+          <li><a href="https://instagram.com/" target="_blank">Instagram</a></li>
+          <li><a href="https://tiktok.com/" target="_blank">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Solesi Samuel Oluwatomisin. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Auto update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
