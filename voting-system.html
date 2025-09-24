@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voting System</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f6fa; padding: 20px; text-align: center; }
+    h1 { margin-bottom: 20px; }
+    .candidate { margin: 10px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; display: inline-block; width: 180px; background: #fff; }
+    button { margin-top: 10px; background: #0077ff; color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056cc; }
+    button:disabled { background: gray; cursor: not-allowed; }
+    #results { margin-top: 20px; font-weight: bold; }
+    .msg { margin-top: 10px; font-size: 14px; color: green; }
+  </style>
+</head>
+<body>
+  <h1>Course Rep Voting</h1>
+
+  <div class="candidate">
+    <h3>Alice</h3>
+    <button onclick="vote('Alice')">Vote</button>
+  </div>
+
+  <div class="candidate">
+    <h3>Bob</h3>
+    <button onclick="vote('Bob')">Vote</button>
+  </div>
+
+  <div class="candidate">
+    <h3>Charlie</h3>
+    <button onclick="vote('Charlie')">Vote</button>
+  </div>
+
+  <div id="results">No votes yet.</div>
+  <div class="msg" id="msg"></div>
+
+  <script>
+    let votes = { Alice: 0, Bob: 0, Charlie: 0 };
+
+    // Check if user already voted
+    if (localStorage.getItem("votedFor")) {
+      document.getElementById("msg").innerText = 
+        "⚠️ You already voted for " + localStorage.getItem("votedFor");
+      disableAllButtons();
+    }
+
+    function vote(candidate) {
+      if (localStorage.getItem("votedFor")) {
+        document.getElementById("msg").innerText = "❌ You cannot vote again!";
+        return;
+      }
+
+      votes[candidate]++;
+      localStorage.setItem("votedFor", candidate);
+      document.getElementById("msg").innerText = "✅ You voted for " + candidate;
+
+      document.getElementById("results").innerText =
+        `Alice: ${votes.Alice} | Bob: ${votes.Bob} | Charlie: ${votes.Charlie}`;
+
+      disableAllButtons();
+    }
+
+    function disableAllButtons() {
+      document.querySelectorAll("button").forEach(btn => btn.disabled = true);
+    }
+  </script>
+</body>
+</html>
